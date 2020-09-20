@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+    docker.withRegistry('https://registry.hub.docker.com', 'github-id') {
 
         def customImage = docker.build("alexscchen/devopsdemo")
 
