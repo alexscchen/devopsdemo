@@ -1,4 +1,5 @@
 node {
+    stage("CI build"){
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-id') {
@@ -8,4 +9,5 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
     }
+    }       
 }
