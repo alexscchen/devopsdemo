@@ -1,3 +1,7 @@
+stage 'Prep'
+node {
+}
+
 node {
     stage("CI build"){
         checkout scm
