@@ -13,5 +13,6 @@ node {
     stage("CD Test"){
        }
     stage("CD Deploy"){
+        sshPublisher(publishers: [sshPublisherDesc(configName: 'k8smaster', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'kubectl rollout restart deployment/cdjenkinsdemo', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/alexchen', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
     }
 }
