@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cdjenkinsdemo
+  labels:
+    app: nginxweb
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: mynginxhtml
+  template:
+    metadata:
+      labels:
+        app: mynginxhtml
+    spec:
+      containers:
+      - name: nginx
+        image: alexchen2015/devopsdemo:latest
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: nginxwebexternal
+spec:
+   selector:
+     app: mynginxhtml
+   type: NodePort
+   ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 80
