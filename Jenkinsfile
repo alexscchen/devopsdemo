@@ -16,8 +16,8 @@ node {
       
     }
 
-stage 'Test Approval'
-input "Continue?"
+stage 'Approval Needed'
+input "Test Done, Continue Deploy?"
 node {
      stage("CD Deploy"){
     
