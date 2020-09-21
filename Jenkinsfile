@@ -10,6 +10,6 @@ node {
         customImage.push()
                  }
                } 
-    stage(CD Test){
+    stage("CD Test"){
     }
 }
