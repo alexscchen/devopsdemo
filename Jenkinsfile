@@ -11,5 +11,7 @@ node {
                  }
                } 
     stage("CD Test"){
+       }
+    stage("CD Deploy"){
     }
 }
